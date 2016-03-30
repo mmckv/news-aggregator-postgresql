@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Articles</title>
+  </head>
+  <% if @error %>
+  <% @errors.each do |mistake| %>
+  <%= mistake %>
+  <% end %>
+  <% end %>
+  <body>
+    <form action="/articles/new" method="post">
+      <label for="Title">New Article:</label>
+      <input type="text" id="Title" name="title" value="<%= @previous_article %>" required>
+      <label for="URL">URL:</label>
+      <input type="url" id="URL" name="url" value="<%= @previous_url %>" required="">
+      <label for="Description">New Description:</label>
+      <input pattern=".{20,}" type="text" id="Description" name="description" value="<%= @previous_description %>" required>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>

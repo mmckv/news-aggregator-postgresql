@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Articles</title>
+  </head>
+  <body>
+    <h1>Here are the articles</h1>
+    <ul>
+      <% @article_list.each do |thing| %>
+      <li>
+        Name:
+        <%= thing.info["title"] %>
+        Website:
+        <a href="<%= thing.info[" url"]%>"><%= thing.info["url"] %></a>
+        Description:
+        <%= thing.info["description"] %>
+      </li>
+      <% end %>
+    </ul>
+  </body>
+</html>
